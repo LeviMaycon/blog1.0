@@ -1,17 +1,16 @@
+<!-- index.html -->
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Programmer</title>
-    <link rel="stylesheet" href={% static "css/styles.css" %}>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
-    <!-- <div class="container"> -->
     <header>
         <nav class="navigation">
             <ul class="menu menu-left">
@@ -26,6 +25,8 @@
                 <li><a href="#">Linkedin</a></li>
                 <li><a href="#">GitHub</a></li>
             </ul>
+
+
             <!-- Dark Mode Button -->
             <button id="theme-switch">
                 <!--dark-->
@@ -43,11 +44,18 @@
             </button>
         </nav>
     </header>
+
     <main class="grid-sections">
         {% block content %}
+            <ul>
+                {% for post in posts %}
+                    <li><a href="#">{{ post.title }}</a> - {{ post.author }}<br>
+                    {{ post.body }}</li>
+                {% endfor %}
+            </ul>
         {% endblock %}
     </main>
-    <script src={% static "js/script.js" %}></script>
-</body>
 
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
 </html>
