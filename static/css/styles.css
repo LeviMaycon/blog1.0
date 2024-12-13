@@ -1,0 +1,178 @@
+:root {
+    --background-color: #000;
+    --article-title: #fff;
+    --primary-color: #fff;
+    --text-color: #fff;
+    --link-hover-color: #007BFF;
+    --font-family: "ProximaNova";
+    --font-size-larger: larger;
+    --font-title: 24px;
+    --font-weight-light: 100;
+    --font-weight-bold: 100;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --logo-subtitle-color: #ccc;
+}
+
+.darkmode {
+    --background-color: #fff;
+    --article-title: #000;
+    --primary-color: #000;
+    --text-color: #000;
+    --link-hover-color: #02448b;
+    --logo-subtitle-color: #333;
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transition: 0.3;
+}
+
+#theme-switch svg{
+    fill: var(--primary-color)
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+
+/* Font */
+@font-face {
+    font-family: var(--font-family);
+    src: url("../fonts/ProximaNova-Light.ttf");
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-larger);
+    color: var(--text-color);
+}
+
+
+/*** HEADER ***/
+
+/* Header Styles */
+header {
+    padding: 10px 20px;
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid #333;
+}
+
+/* Navigation Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Menu Styles */
+.menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-left li, 
+.menu-right li {
+    margin: 0 15px;
+}
+
+.menu-left li a, 
+.menu-right li a {
+    font-weight: var(--font-weight-light);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu-left li a:hover, 
+.menu-right li a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Logo Styles */
+.logo {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.logo-title {
+    color: var(--text-color);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-title);
+    text-decoration: none;
+}
+
+.logo-subtitle {
+    font-weight: var(--font-weight-light);
+    font-size: 0.9em;
+    color: var(--logo-subtitle-color);
+}
+
+
+
+/*** grid-sections ***/
+
+.grid-sections{
+    display: grid;
+    column-gap: 90px;
+    margin-top: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
+
+.tech-article p{
+    font-weight: 100;
+    padding-top: 15px;
+}
+
+
+.pub-title{
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--article-title);
+}
+
+.pub-title:hover{
+    color: var(--link-hover-color);
+}
+
+
+.active{
+    color: var(--primary-color)!important;
+}
+
+br{
+    margin-top: 15px;
+}
